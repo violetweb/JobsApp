@@ -1,0 +1,10 @@
+<div>
+  <div *ngIf="editing" class="input-group">   
+    <label class="input-group-addon label-success"><i class="fa fa-pencil">&nbsp;</i>{{label}}</label> 
+    <textarea #textareaEditControl [required]="required" (blur)="onBlur($event)" [name]="value" [(ngModel)]="value" [placeholder]="label" class="form-control">{{value}}</textarea>
+  </div>
+  <div *ngIf="!editing" class="input-group">
+   <label class="input-group-addon">{{label}}</label> 
+    <div class="form-control" title="Click to edit" (click)="edit(value)" (focus)="edit(value);" tabindex="0"><p>{{value}}</p></div>
+  </div>
+</div>
